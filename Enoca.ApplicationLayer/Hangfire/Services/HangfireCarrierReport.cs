@@ -22,7 +22,7 @@ namespace Enoca.ApplicationLayer.Hangfire.Services
         }
         public async Task Fire()
         {
-            var jobId = Guid.NewGuid().ToString();
+            var jobId = "Reporter";
             _recurringJobManager.AddOrUpdate(
             jobId,
             () => _mediator.Send(new CreateCarrierReportsRequest(), CancellationToken.None),
