@@ -1,0 +1,41 @@
+﻿using Enoca.ApplicationLayer.Exceptions;
+using Enoca.ApplicationLayer.Interface.Repositories.Services;
+using Enoca.ApplicationLayer.Wrappers;
+using MapsterMapper;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Enoca.ApplicationLayer.Features.CarrierConfigurations.Command.DeleteCarrierConfigurations
+{
+    public class DeleteCarrierConfigurationsHandler : IRequestHandler<DeleteCarrierConfigurationsRequest, IResponse>
+    {
+        private readonly ICarrierConfigurationsRepository _carrierConfigurationsRepository;
+        private readonly IMapper _mapper;
+
+        public DeleteCarrierConfigurationsHandler(ICarrierConfigurationsRepository carrierConfigurationsRepository, IMapper mapper)
+        {
+            _carrierConfigurationsRepository = carrierConfigurationsRepository;
+            _mapper = mapper;
+        }
+        public async Task<IResponse> Handle(DeleteCarrierConfigurationsRequest request, CancellationToken cancellationToken)
+        {
+           var entity = await _carrierConfigurationsRepository.GetByIdAsync(request.Id);
+
+            if (entity == null)
+            {
+                throw new BusinessException("Kargo Firmasi Konfigürasyonu bulunamadi.");
+            }
+
+            var result = await _carrierConfigurationsRepository.UpdateIsDeletedAsync(entity);
+
+            if (request.SavaChanges)
+                await _carrierConfigurationsRepository.SaveAsync();
+
+            return ResponseFactory.CreateResponse(result);
+        }
+    }
+}
