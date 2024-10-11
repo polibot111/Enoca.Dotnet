@@ -1,5 +1,7 @@
-﻿using Enoca.ApplicationLayer.Interface.Repositories.Services;
+﻿using Enoca.ApplicationLayer.Interface.Hangfire.Connection;
+using Enoca.ApplicationLayer.Interface.Repositories.Services;
 using Enoca.Persistance.Context;
+using Enoca.Persistance.Hangfire;
 using Enoca.Persistance.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +31,7 @@ namespace Enoca.Persistance
             services.AddScoped<ICarriersRepository, CarriersRepository>();
             services.AddScoped<ICarrierConfigurationsRepository, CarrierConfigurationsRepository>();
             services.AddScoped<ICarrierReportsRepository, CarrierReportsRepository>();
+            services.AddScoped<IHangfireConnection, HangfireConnection>();
 
         }
     }
