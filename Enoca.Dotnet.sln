@@ -9,15 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B99278F0-4FD0-4E83-BCF7-76B75D720A8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enoca.Core", "Enoca.Core\Enoca.Core.csproj", "{A71AED0A-1AAF-487A-BE90-40F5446F45AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enoca.Core", "Enoca.Core\Enoca.Core.csproj", "{A71AED0A-1AAF-487A-BE90-40F5446F45AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enoca.ApplicationLayer", "Enoca.ApplicationLayer\Enoca.ApplicationLayer.csproj", "{D675CE13-BA28-4163-99FD-17EBB38537E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enoca.ApplicationLayer", "Enoca.ApplicationLayer\Enoca.ApplicationLayer.csproj", "{D675CE13-BA28-4163-99FD-17EBB38537E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enoca.Persistance", "Enoca.Persistance\Enoca.Persistance.csproj", "{450F5338-96FD-4FE1-A1D4-E6FBCE58DA6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enoca.Persistance", "Enoca.Persistance\Enoca.Persistance.csproj", "{450F5338-96FD-4FE1-A1D4-E6FBCE58DA6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enoca.Infrastructure", "Enoca.Infrastructure\Enoca.Infrastructure.csproj", "{4416E78B-455F-42C4-AE29-949AA05EC629}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enoca.Infrastructure", "Enoca.Infrastructure\Enoca.Infrastructure.csproj", "{4416E78B-455F-42C4-AE29-949AA05EC629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enoca.Presentation", "Enoca.Presentation\Enoca.Presentation.csproj", "{C45FA207-B792-41E7-880E-0A46DBB9C39C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enoca.Presentation", "Enoca.Presentation\Enoca.Presentation.csproj", "{C45FA207-B792-41E7-880E-0A46DBB9C39C}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D517A573-4C24-4945-8539-B7DBFA607FBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{C45FA207-B792-41E7-880E-0A46DBB9C39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C45FA207-B792-41E7-880E-0A46DBB9C39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C45FA207-B792-41E7-880E-0A46DBB9C39C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D517A573-4C24-4945-8539-B7DBFA607FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D517A573-4C24-4945-8539-B7DBFA607FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D517A573-4C24-4945-8539-B7DBFA607FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D517A573-4C24-4945-8539-B7DBFA607FBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

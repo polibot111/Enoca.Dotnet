@@ -1,5 +1,6 @@
 using Enoca.ApplicationLayer;
 using Enoca.ApplicationLayer.Hangfire.Configurations;
+using Enoca.ApplicationLayer.Hangfire.HangfireAuthorizationFilter;
 using Enoca.ApplicationLayer.Hangfire.Services;
 using Enoca.ApplicationLayer.Interface.Hangfire.Connection;
 using Enoca.ApplicationLayer.Validations.Orders;
@@ -88,6 +89,9 @@ using (var scope = app.Services.CreateScope())
     await hangService.Fire();
 }
 
-app.UseHangfireDashboard();
+app.UseHangfireDashboard("/hangfire", new DashboardOptions
+{
+    Authorization = new[] { new HangfireAuthorizationFilter() }
+});
 
 app.Run();
