@@ -1,0 +1,22 @@
+services:
+  enoca.presentation:
+    image: ${DOCKER_REGISTRY-}enocapresentation
+    build:
+      context: .
+      dockerfile: Enoca.Presentation/Dockerfile
+    environment:
+      - ConnectionStrings__DatabaseConnection=Server=mssql-server;Database=Enoca;User Id=sa;Password=Strong!123.;MultipleActiveResultSets=true;
+      - ConnectionStrings__DatabaseConnectionHangfire=Server=mssql-server;Database=EnocaHangfire;User Id=sa;Password=Strong!123.;MultipleActiveResultSets=true;
+    depends_on:
+      - mssql-server
+    ports:
+      - "7212:5290"  
+
+  mssql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Strong!123.
+      - MSSQL_DATABASE=Enoca
+    ports:
+      - "1433:1433"
